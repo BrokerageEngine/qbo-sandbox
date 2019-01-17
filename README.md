@@ -1,40 +1,8 @@
 # Qbo::Sandbox
 
-Copy QuickBooks Online production entities to a sandbox in a single command
+### Stripped Down
 
-## Requirements
-
-Ruby 2.2.2 or greater
-
-## Usage
-
-1. [Clean out](https://developer.intuit.com/hub/blog/2015/12/14/deleting-data-from-your-developer-sandbox-environment) your sandbox.
-
-2. `gem install qbo-sandbox`
-
-3. Enter in your production and sandbox credentials into a .env file of your choosing. 
-
-   For example, here is a .env file at `~/qbo-sandbox.env`
-
-    ```
-    # ~/.qbo-sandbox.env
-    QBO_SANDBOX_PROD_TOKEN=prod_token_xxxxx
-    QBO_SANDBOX_PROD_SECRET=prod_secret_xxxx
-    QBO_SANDBOX_PROD_REALM_ID=100000000
-    QBO_SANDBOX_PROD_CONSUMER_KEY=prod_consumer_key_ddddddd
-    QBO_SANDBOX_PROD_CONSUMER_SECRET=prod_consumer_secret_dddddd
-    QBO_SANDBOX_TOKEN=token_gggggg
-    QBO_SANDBOX_SECRET=secret_ggggg
-    QBO_SANDBOX_CONSUMER_KEY=consumer_key_yyyyyy
-    QBO_SANDBOX_CONSUMER_SECRET=consumer_secret_sssssss
-    QBO_SANDBOX_REALM_ID=2000000000000
-    ```
-
-    All variables need to filled in. The `PROD` variables are your QuickBooks Online production credentials
-
-4. **`QBO_SANDBOX_ENV_FILE=~/qbo-sandbox.env qbo-sandbox customers`**
-
-5. That's it!
+This version of the library has been modified to take in a Qbo::Connection object. This removes all the code that setups up environments and connection logic.  That way they OAuth2 settings can be handled in a different path.
 
 ## FAQ
 
